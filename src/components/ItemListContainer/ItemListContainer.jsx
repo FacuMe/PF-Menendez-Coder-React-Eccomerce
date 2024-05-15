@@ -2,24 +2,31 @@ import './itemlistcontainer.css';
 import ItemList from './ItemList';
 import { useEffect, useState } from 'react';
 import getProducts from "../../data/data";
+import { useParams } from 'react-router-dom';
 
 
 const ItemListContainer = ({ greetings }) => {
 
-  const [ products, setProducts ] = useState([])
+  const [ products, setProducts ] = useState([]);
+  const { idCategory} = useParams();
 
   useEffect(() => {
     getProducts()
       .then((response) => {
-        setProducts(response);
+        if(idCategory){
+          const productsFilter = response.filter( (productRes) => productRes.category === idCategory);
+          setProducts(productsFilter);
+        } else {
+          setProducts(response);
+        }
       })
       .catch((error) => {
         console.error(error);
       })
       .finally(() => {
-        console.log("Finalizó la promesa");
+        console.log("Finalizó la promesa de ItemListContainer");
       });
-  }, []);
+  }, [idCategory]);
 
   return (
     <div>

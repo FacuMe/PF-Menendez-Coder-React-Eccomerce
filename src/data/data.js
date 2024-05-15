@@ -4,7 +4,7 @@ const getProducts = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(json)
-        }, 3000);
+        }, 2000);
     });
 };
 

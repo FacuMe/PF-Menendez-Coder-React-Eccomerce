@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const Item = ({product}) => {
   return (
     <div className="col-6 col-sm-3 d-flex justify-content-center products__block__item">
@@ -7,10 +9,12 @@ const Item = ({product}) => {
             </div>
             <p className="products__block__item__box__name">{product.name}</p>
             <p className="products__block__item__box__title">{product.author}</p>
-            <p className="products__block__item__box__price">$ {product.price}</p>           
+            <p className="products__block__item__box__price">$ {product.price}</p>
             <div>
-                <button type="button" className="btn btn-dark products__block__item__box__btn">Descripción</button>       
-            </div>  
+              <Link to={"/detail/" + product.id}>
+                  <button type="button" className="btn btn-dark products__block__item__box__btn">Descripción</button>       
+              </Link>  
+            </div>           
         </div>
     </div>
   )
