@@ -21,9 +21,9 @@ const ItemCount = ({product}) => {
     }
 
     return (
-        <div>
+        <div className="d-flex justify-content-center align-items-center gap-3">
             <button onClick={restar}>-</button>
-            <p>{count}</p>
+            <p className="m-0">{count}</p>
             <button onClick={sumar}>+</button>
             <button onClick={agregarAlCarrito}>Agregar al carrito</button>
         </div>
