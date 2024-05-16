@@ -13,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element= {<ItemListContainer greetings="Bienvenido a Booklify: Tu Destino para Descubrir y Comprar los Mejores Libros"/>} />
         <Route path="/category/:idCategory" element= {<ItemListContainer greetings="Bienvenido a Booklify: Tu Destino para Descubrir y Comprar los Mejores Libros"/>} />
+        <Route path="/:filter" element= {<ItemListContainer greetings="Bienvenido a Booklify: Tu Destino para Descubrir y Comprar los Mejores Libros"/>} />
         <Route path="/detail/:idProduct" element= {<ItemDetailContainer />} /> 
       </Routes>
     </BrowserRouter>

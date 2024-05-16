@@ -7,7 +7,7 @@
         "price": 20,
         "stock": 15,
         "category": "literatura",
-        "new_arrivals": false,
+        "newArrivals": false,
         "offers": true,
         "featured": true,
         "description": "Una saga familiar que narra la historia de los Buendía en el pueblo ficticio de Macondo, explorando temas como el amor, la soledad y la búsqueda de significado en la vida."
@@ -20,7 +20,7 @@
         "price": 18,
         "stock": 10,
         "category": "literatura",
-        "new_arrivals": true,
+        "newArrivals": true,
         "offers": false,
         "featured": true,
         "description": "Una historia de amor ambientada en Colombia a finales del siglo XIX y principios del XX, que explora la pasión, la perseverancia y la esperanza a lo largo del tiempo."
@@ -33,7 +33,7 @@
         "price": 22,
         "stock": 5,
         "category": "literatura",
-        "new_arrivals": false,
+        "newArrivals": false,
         "offers": false,
         "featured": true,
         "description": "Una novela que sigue a un joven llamado Daniel Sempere en la Barcelona de la posguerra, mientras descubre un misterioso libro que cambiará su vida para siempre."
@@ -46,7 +46,7 @@
         "price": 35,
         "stock": 8,
         "category": "fantasia",
-        "new_arrivals": true,
+        "newArrivals": true,
         "offers": false,
         "featured": true,
         "description": "Una épica de fantasía que sigue el viaje de Frodo Bolsón para destruir un poderoso anillo y salvar a la Tierra Media de la oscuridad."
@@ -59,7 +59,7 @@
         "price": 19,
         "stock": 20,
         "category": "ficcion",
-        "new_arrivals": false,
+        "newArrivals": false,
         "offers": false,
         "featured": true,
         "description": "Una distopía que presenta un futuro totalitario en el que el gobierno controla todos los aspectos de la vida de las personas."
@@ -72,7 +72,7 @@
         "price": 15,
         "stock": 12,
         "category": "literatura",
-        "new_arrivals": false,
+        "newArrivals": false,
         "offers": true,
         "featured": false,
         "description": "Una sátira política que utiliza animales de una granja para representar a diferentes personajes y situaciones de la Revolución Rusa de 1917."
@@ -85,7 +85,7 @@
         "price": 24,
         "stock": 18,
         "category": "fantasia",
-        "new_arrivals": false,
+        "newArrivals": false,
         "offers": false,
         "featured": true,
         "description": "El primer libro de la serie de Harry Potter, que narra las aventuras de un joven mago mientras descubre el mundo de la magia y lucha contra el malvado Lord Voldemort."
@@ -98,7 +98,7 @@
         "price": 21,
         "stock": 7,
         "category": "ficcion",
-        "new_arrivals": true,
+        "newArrivals": true,
         "offers": false,
         "featured": false,
         "description": "La historia de Santiago, un joven pastor andaluz que viaja desde su tierra natal hasta el desierto egipcio en busca de un tesoro oculto."
@@ -111,7 +111,7 @@
         "price": 28,
         "stock": 14,
         "category": "clasicos",
-        "new_arrivals": false,
+        "newArrivals": false,
         "offers": false,
         "featured": true,
         "description": "Considerada una de las obras más importantes de la literatura española, esta novela cuenta las aventuras de un caballero llamado Don Quijote y su fiel escudero Sancho Panza."
@@ -124,7 +124,7 @@
         "price": 32,
         "stock": 3,
         "category": "aventura",
-        "new_arrivals": true,
+        "newArrivals": true,
         "offers": false,
         "featured": true,
         "description": "La historia del capitán Ahab y su obsesión por cazar a una gran ballena blanca, conocida como Moby Dick, en una aventura llena de peligros y tragedias."
@@ -137,7 +137,7 @@
         "price": 17,
         "stock": 9,
         "category": "romance",
-        "new_arrivals": false,
+        "newArrivals": false,
         "offers": false,
         "featured": true,
         "description": "Una novela de amor y sociedad que sigue la vida de Elizabeth Bennet, una joven ingeniosa e independiente, y su relación con el altivo Sr. Darcy."
@@ -150,7 +150,7 @@
         "price": 26,
         "stock": 6,
         "category": "misterio",
-        "new_arrivals": false,
+        "newArrivals": false,
         "offers": false,
         "featured": true,
         "description": "Una novela de misterio que sigue al simbologista Robert Langdon en una búsqueda para resolver un misterio que involucra a la Iglesia Católica y a Leonardo da Vinci."
@@ -163,7 +163,7 @@
         "price": 30,
         "stock": 11,
         "category": "clasicos",
-        "new_arrivals": false,
+        "newArrivals": false,
         "offers": true,
         "featured": false,
         "description": "Una historia épica que sigue las vidas de varios personajes en la Francia del siglo XIX, explorando temas como la redención, el amor y la justicia."
@@ -176,7 +176,7 @@
         "price": 18,
         "stock": 5,
         "category": "ficcion",
-        "new_arrivals": false,
+        "newArrivals": false,
         "offers": false,
         "featured": false,
         "description": "La historia de un joven llamado Dorian Gray, que vende su alma para mantener su belleza juvenil mientras su retrato envejece en su lugar."
@@ -189,7 +189,7 @@
         "price": 22,
         "stock": 8,
         "category": "terror",
-        "new_arrivals": false,
+        "newArrivals": false,
         "offers": false,
         "featured": true,
         "description": "La historia del Conde Drácula y su intento de trasladarse de Transilvania a Inglaterra para encontrar nuevas víctimas y propagar la no-muerte."
@@ -202,7 +202,7 @@
         "price": 12,
         "stock": 20,
         "category": "juvenil",
-        "new_arrivals": true,
+        "newArrivals": true,
         "offers": false,
         "featured": true,
         "description": "Un cuento filosófico que sigue las aventuras de un joven príncipe que viaja a diferentes planetas, aprendiendo sobre el amor, la amistad y la vida."
@@ -215,7 +215,7 @@
         "price": 27,
         "stock": 13,
         "category": "fantasia",
-        "new_arrivals": false,
+        "newArrivals": false,
         "offers": false,
         "featured": true,
         "description": "La primera novela de la serie Crónica del asesino de reyes, que sigue la vida de Kvothe, un músico y aventurero legendario, mientras narra su historia a un cronista."
@@ -228,7 +228,7 @@
         "price": 16,
         "stock": 9,
         "category": "historico",
-        "new_arrivals": false,
+        "newArrivals": false,
         "offers": false,
         "featured": true,
         "description": "Una historia narrada por la Muerte que sigue la vida de Liesel Meminger, una niña que roba libros y comparte palabras en la Alemania nazi."
@@ -241,7 +241,7 @@
         "price": 23,
         "stock": 4,
         "category": "ficcion",
-        "new_arrivals": false,
+        "newArrivals": false,
         "offers": false,
         "featured": false,
         "description": "Una novela satírica que se desarrolla en la ciudad de Nueva York en la década de 1980, que explora temas como la ambición, la riqueza y la corrupción."
@@ -254,7 +254,7 @@
         "price": 20,
         "stock": 10,
         "category": "juvenil",
-        "new_arrivals": false,
+        "newArrivals": false,
         "offers": false,
         "featured": true,
         "description": "La historia de Holden Caulfield, un adolescente alienado que lucha contra la hipocresía y la superficialidad de la sociedad adulta."

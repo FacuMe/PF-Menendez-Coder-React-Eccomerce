@@ -8,17 +8,25 @@ import { useParams } from 'react-router-dom';
 const ItemListContainer = ({ greetings }) => {
 
   const [ products, setProducts ] = useState([]);
-  const { idCategory} = useParams();
+  const { idCategory, filter } = useParams();
+
+  const applyFilter = (products, filter) => {
+    return products.filter((product) => product[filter] === true);
+  };
 
   useEffect(() => {
     getProducts()
       .then((response) => {
-        if(idCategory){
-          const productsFilter = response.filter( (productRes) => productRes.category === idCategory);
-          setProducts(productsFilter);
-        } else {
-          setProducts(response);
+        let filteredProducts = response;
+        
+        if(filter){          
+          filteredProducts = applyFilter(response, filter);
         }
+        else if(idCategory){
+          filteredProducts = response.filter( (productRes) => productRes.category === idCategory);
+        } 
+        
+        setProducts(filteredProducts);
       })
       .catch((error) => {
         console.error(error);
@@ -26,7 +34,7 @@ const ItemListContainer = ({ greetings }) => {
       .finally(() => {
         console.log("Finalizó la promesa de ItemListContainer");
       });
-  }, [idCategory]);
+  }, [idCategory, filter]);
 
   return (
     <div>
