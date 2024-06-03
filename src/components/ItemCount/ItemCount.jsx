@@ -1,31 +1,31 @@
 import { useState } from "react"
 
-const ItemCount = ({product}) => {
+const ItemCount = ({ stock, addProduct }) => {
 
     const [ count, setCount ] = useState(1);
 
-    const restar = () => {
+    const handleClickDecrement = () => {
         if(count > 1){
             setCount(count - 1);
         }
     }
 
-    const sumar = () => {
-        if(count < product.stock){
+    const handaleClickIncrement = () => {
+        if(count < stock){
             setCount(count + 1);
         }
     }
 
-    const agregarAlCarrito = () => {
-        console.log(count);
+    const handleClickAddToCart = () => {
+        addProduct(count);
     }
 
     return (
         <div className="d-flex justify-content-center align-items-center gap-3">
-            <button onClick={restar}>-</button>
+            <button onClick={handleClickDecrement}>-</button>
             <p className="m-0">{count}</p>
-            <button onClick={sumar}>+</button>
-            <button onClick={agregarAlCarrito}>Agregar al carrito</button>
+            <button onClick={handaleClickIncrement}>+</button>
+            <button onClick={handleClickAddToCart}>Agregar al carrito</button>
         </div>
     )
 }
