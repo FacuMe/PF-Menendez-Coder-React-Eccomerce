@@ -1,26 +1,32 @@
-import { useEffect, useState } from "react"
-import getProducts from "../../data/data"
-import ItemDetail from "./ItemDetail"
-import { useParams } from "react-router-dom"
+import { useEffect, useState } from "react";
+import ItemDetail from "./ItemDetail";
+import { useParams } from "react-router-dom";
+import {doc, getDoc} from "firebase/firestore";
+import db from "../../db/db.js";
 
 const ItemDetailContainer = () => {
 
   const [ product, setProduct] = useState({});
   const { idProduct } = useParams();
 
-  useEffect(() => {
-    getProducts()
-      .then((response) => {
-        const productFind = response.find( (productRes) => productRes.id === idProduct );
-        setProduct(productFind);
+  const getProduct = () => {
+    const productRef = doc(db, "products", idProduct);
+    getDoc(productRef)
+      .then((productDb) => {
+        const data = { id: productDb.id, ...productDb.data()};
+        setProduct(data);
       })
       .catch((error) => {
-        console.error(error);
+        toast.error(error.message);
       })
       .finally(() => {
         console.log("Finalizó la promesa de ItemDetailContainer");
       });
-  }, []);
+  }
+
+  useEffect(() => {
+    getProduct();
+  }, [idProduct]);
 
   return (
     <ItemDetail product={product}/>

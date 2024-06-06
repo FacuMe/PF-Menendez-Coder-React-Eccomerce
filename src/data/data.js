@@ -2,7 +2,9 @@ import json from "./data.json"
 
 const getProducts = () => {
     return new Promise((resolve, reject) => {
-        resolve(json)
+        setTimeout(() => {
+            resolve(json);
+        }, 2000);
     });
 };
 
