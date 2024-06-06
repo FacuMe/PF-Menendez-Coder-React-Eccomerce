@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import {collection, getDocs, query, where} from 'firebase/firestore';
 import db from "../../db/db";
 import { toast } from 'react-toastify';
+import Banner from "../Banner/Banner.jsx";
 import './itemlistcontainer.css';
 
 
@@ -124,6 +125,7 @@ const ItemListContainer = () => {
 
   return (
     <div>
+      <Banner />
       <h1 className="d-flex justify-content-center align-items-center pt-4 encabezado">{getHeaderMessage()}</h1>
       {
         loading ? <div>Cargando...</div> : error ? <div className="error-message">{error}</div> : <ItemList products={products}/>
