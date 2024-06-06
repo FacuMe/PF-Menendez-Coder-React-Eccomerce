@@ -1,6 +1,7 @@
 .encabezado {
     font-size: 24px;
-    color:white
+    color:white;
+    text-transform: capitalize;
 }
 
 .products__block__item {

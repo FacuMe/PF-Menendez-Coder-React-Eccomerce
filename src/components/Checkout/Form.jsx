@@ -10,6 +10,9 @@ const Form = ({formData, handleChangeInput, handleSubmitForm}) => {
         <label>Email: </label>
         <input type="email" name="email" value={formData.email} onChange={handleChangeInput} />
 
+        <label>Reingrese Email: </label>
+        <input type="email" name="emailCheck" value={formData.emailCheck} onChange={handleChangeInput} />
+
         <button type="submit">Enviar orden</button>
     </form>
   )

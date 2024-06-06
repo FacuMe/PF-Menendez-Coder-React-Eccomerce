@@ -1,15 +1,18 @@
 import ItemCount from "../ItemCount/ItemCount"
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
+import { Link } from "react-router-dom";
 import './itemdetail.css';
 
 const ItemDetail = ({product}) => {
 
   const { addToCart } = useContext(CartContext);
+  const [hideCount, setHideCount] = useState(false);
 
   const addProduct = (count) => {
     const productCart = { ...product, quantity: count};
     addToCart(productCart);
+    setHideCount(true);
   }
 
   return (
@@ -24,10 +27,14 @@ const ItemDetail = ({product}) => {
         <p>Categoría: {product.category}</p>
         <p>Stock: {product.stock}</p>
         <p>${product.price}</p>
-        <ItemCount stock={product.stock} addProduct={addProduct}/>
+        {hideCount ? (
+          <Link to="/cart">Ir al carrito</Link>
+        ) : (
+          <ItemCount stock={product.stock} addProduct={addProduct}/>
+        )}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default ItemDetail

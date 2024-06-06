@@ -13,7 +13,8 @@ const Checkout = () => {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    email: ""
+    email: "",
+    emailCheck: ""
   });
   const [idOrder, setIdOrder] = useState(null);
   const { carrito, totalCartValue, clearCart } = useContext(CartContext);
@@ -24,8 +25,9 @@ const Checkout = () => {
 
   const handleSubmitForm = async(event) => {
     event.preventDefault()
+    const { emailCheck, ...customerData } = formData;
     const order = {
-      customer: {...formData},
+      customer: {...customerData},
       products: [...carrito],
       date: Timestamp.fromDate(new Date()),
       total: totalCartValue()

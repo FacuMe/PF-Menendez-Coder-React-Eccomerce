@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {collection, getDocs, query, where} from 'firebase/firestore';
 import db from "../../db/db";
+import { toast } from 'react-toastify';
 import './itemlistcontainer.css';
 
 
@@ -10,11 +11,8 @@ const ItemListContainer = () => {
 
   const [ products, setProducts ] = useState([]);
   const [ loading, setLoading ] = useState(false);
+  const [ error, setError ] = useState(null);
   const { idCategory, filter } = useParams();
-
-  // const applyFilter = (products, filter) => {
-  //   return products.filter((product) => product[filter] === true);
-  // };
 
   const getProducts = () => {
     const productsRef = collection(db, "products");
@@ -24,9 +22,15 @@ const ItemListContainer = () => {
           return {id: product.id, ...product.data()}
         });
         setProducts(data);
+        if (data.length === 0) {
+          setError("No se encontraron productos disponibles.");
+          toast.error(`Error en la carga inicial de productos`);
+        } else {
+          setError(null);
+        }
       })
       .catch((error) => {
-        toast.error(error.message);
+        console.log(error.message);
       })
       .finally(() => {
         setLoading(false);
@@ -42,38 +46,75 @@ const ItemListContainer = () => {
           return {id: product.id, ...product.data()}
         });
         setProducts(data);
+        if (data.length === 0) {
+          setError(`No se encontraron productos para la categoría buscada.`);
+          toast.error(`Error en la carga de productos por categoría`);
+        } else {
+          setError(null);
+        }
       })
       .catch((error) => {
-        toast.error(error.message);
+        console.log(error.message);
       })
       .finally(() => {
         setLoading(false);
       });
   }
 
+  const getProductsByFilters = (filter) => {
+    const productsRef = collection(db, "products");
+    const q = query(productsRef, where(filter, "==", true))
+    getDocs(q)
+      .then((productsDb)=> {
+        const data = productsDb.docs.map( (product) => {
+          return {id: product.id, ...product.data()}
+        });
+        setProducts(data);
+        if (data.length === 0) {
+          setError(`No se encontraron productos con el filtro buscado.`);
+          toast.error(`Error en la carga de productos por filtro`);
+        } else {
+          setError(null);
+        }
+      })
+      .catch((error) => {
+        console.log(error.message);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }
+
+  const translateFilter = (filter) => {
+    switch (filter) {
+      case "newArrivals":
+        return "novedades";
+      case "featured":
+        return "destacados";
+      case "offers":
+        return "ofertas";
+      default:
+        return "";
+    }
+  };
+
+  const getHeaderMessage = () => {
+    if (filter) {
+      return translateFilter(filter);
+    } else if (idCategory) {
+      return idCategory;
+    } else {
+      return "Bienvenido a Booklify: Tu Destino para Descubrir y Comprar los Mejores Libros";
+    }
+  }
+
   useEffect(() => {
     setLoading(true);
 
-    // getProducts()
-    //   .then((response) => {
-    //     let filteredProducts = response;
-        
-    //     if(filter){          
-    //       filteredProducts = applyFilter(response, filter);
-    //     }
-    //     else if(idCategory){
-    //       filteredProducts = response.filter( (productRes) => productRes.category === idCategory);
-    //     } 
-        
-    //     setProducts(filteredProducts);
-    //   })
-    //   .catch((error) => {
-    //     console.error(error);
-    //   })
-    //   .finally(() => {
-    //     setLoading(false);
-    //   });
-    if(idCategory){
+    if(filter){
+      getProductsByFilters(filter)
+    }
+    else if(idCategory){
       getProductsByCategory()
     }
     else{
@@ -83,11 +124,9 @@ const ItemListContainer = () => {
 
   return (
     <div>
-      <h1 className="d-flex justify-content-center align-items-center pt-4 encabezado">{ !idCategory && !filter && "Bienvenido a Booklify: Tu Destino para Descubrir y Comprar los Mejores Libros"}</h1>
-      <h1 className="d-flex justify-content-center align-items-center pt-4 encabezado">{ idCategory && `${idCategory}` }</h1>
-      <h1 className="d-flex justify-content-center align-items-center pt-4 encabezado">{ filter && `${filter}` }</h1>
+      <h1 className="d-flex justify-content-center align-items-center pt-4 encabezado">{getHeaderMessage()}</h1>
       {
-        loading ? <div>Cargando...</div> : <ItemList products={products}/>
+        loading ? <div>Cargando...</div> : error ? <div className="error-message">{error}</div> : <ItemList products={products}/>
       }
     </div>
   )

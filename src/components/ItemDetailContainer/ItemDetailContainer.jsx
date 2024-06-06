@@ -3,33 +3,47 @@ import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import {doc, getDoc} from "firebase/firestore";
 import db from "../../db/db.js";
+import { toast } from 'react-toastify';
 
 const ItemDetailContainer = () => {
 
   const [ product, setProduct] = useState({});
+  const [ loading, setLoading ] = useState(false);
+  const [ error, setError ] = useState(null);
   const { idProduct } = useParams();
 
   const getProduct = () => {
     const productRef = doc(db, "products", idProduct);
     getDoc(productRef)
       .then((productDb) => {
-        const data = { id: productDb.id, ...productDb.data()};
-        setProduct(data);
+        if (productDb.exists()) {
+          const data = { id: productDb.id, ...productDb.data()};
+          setProduct(data);
+          setError(null);
+        } else {
+          setError("Producto no encontrado");
+          toast.error(`Error en la carga del producto`);
+        }
       })
       .catch((error) => {
-        toast.error(error.message);
+        console.log(error.message);
       })
       .finally(() => {
-        console.log("Finalizó la promesa de ItemDetailContainer");
+        setLoading(false);
       });
   }
 
   useEffect(() => {
+    setLoading(true);
     getProduct();
   }, [idProduct]);
 
   return (
-    <ItemDetail product={product}/>
+    <div>
+      {
+        loading ? <div>Cargando...</div> : error ? <div className="error-message">{error}</div> : <ItemDetail product={product}/>
+      }
+    </div>
   )
 }
 

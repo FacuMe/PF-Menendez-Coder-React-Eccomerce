@@ -29,15 +29,15 @@ const NavBar = () => {
               </a>
               <ul className="dropdown-menu">
                 <li><Link to="/category/literatura" className="dropdown-item">Literatura</Link></li>
-                <li><Link to="/category/fantasia" className="dropdown-item">Fantasía</Link></li>
-                <li><Link to="/category/ficcion" className="dropdown-item">Ficción</Link></li>
-                <li><Link to="/category/clasicos" className="dropdown-item">Clásicos</Link></li>
+                <li><Link to="/category/fantasía" className="dropdown-item">Fantasía</Link></li>
+                <li><Link to="/category/ficción" className="dropdown-item">Ficción</Link></li>
+                <li><Link to="/category/clásicos" className="dropdown-item">Clásicos</Link></li>
                 <li><Link to="/category/aventura" className="dropdown-item">Aventura</Link></li>
                 <li><Link to="/category/romance" className="dropdown-item">Romance</Link></li>
                 <li><Link to="/category/misterio" className="dropdown-item">Misterio</Link></li>
                 <li><Link to="/category/terror" className="dropdown-item">Terror</Link></li>
                 <li><Link to="/category/juvenil" className="dropdown-item">Juvenil</Link></li>
-                <li><Link to="/category/historico" className="dropdown-item">Histórico</Link></li>
+                <li><Link to="/category/histórico" className="dropdown-item">Histórico</Link></li>
               </ul>
             </li>
           </ul>
