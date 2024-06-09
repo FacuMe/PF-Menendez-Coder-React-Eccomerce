@@ -36,9 +36,10 @@ const Checkout = () => {
     try {
       const response = await validateForm(formData);
       if(response.status === "success"){
+        toast.success('¡Orden generada con éxito!', {position: "bottom-center",});
         generateOrder(order);
       } else{
-        toast.warning(response.message)
+        toast.warning(response.message, {position: "bottom-center",})
       } 
     } catch (error) {
       toast.error(error.message)
@@ -72,8 +73,8 @@ const Checkout = () => {
       {
         idOrder ? (
           <div className="d-flex flex-column justify-content-center align-items-center">
-            <h2 className="pb-3">¡Orden generada con éxito! 😁</h2>
-            <p>El código de su orden es:</p>
+            <h2 className="pb-3">¡Gracias por tu compra! 😁</h2>
+            <p>El código de tu orden es:</p>
             <p>{idOrder}</p>
           </div>
         ) : (
