@@ -105,7 +105,7 @@ const ItemListContainer = () => {
     } else if (idCategory) {
       return idCategory;
     } else {
-      return "Bienvenido a Booklify: Tu Destino para Descubrir y Comprar los Mejores Libros";
+      return "Tu Destino para Descubrir y Comprar los Mejores Libros";
     }
   }
 
@@ -126,9 +126,9 @@ const ItemListContainer = () => {
   return (
     <div>
       <Banner />
-      <h1 className="d-flex justify-content-center align-items-center pt-4 encabezado">{getHeaderMessage()}</h1>
+      <h2 className="d-flex justify-content-center align-items-center pt-4 pb-4 encabezado">{getHeaderMessage()}</h2>
       {
-        loading ? <div>Cargando...</div> : error ? <div className="error-message">{error}</div> : <ItemList products={products}/>
+        loading ? <div className="loading">Cargando...</div> : error ? <div className="error-message">{error}</div> : <ItemList products={products}/>
       }
     </div>
   )

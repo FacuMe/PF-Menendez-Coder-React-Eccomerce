@@ -6,6 +6,7 @@ import { addDoc, collection, doc, setDoc, Timestamp } from "firebase/firestore";
 import db from "../../db/db.js";
 import validateForm from "../../utils/validationYup.js";
 import { toast } from "react-toastify"; 
+import "./checkout.css";
 
 
 const Checkout = () => {
@@ -50,7 +51,7 @@ const Checkout = () => {
       delete cartProduct.quantity
       const refProduct = doc(db, "products", cartProduct.id);
       setDoc(refProduct, {...cartProduct, stock: cartProduct.stock - quantity})
-        .then(() => console.log("Stock actualizado correctamente"))
+        .then(() => console.log("Success"))
         .catch((error) => toast.error(error.message))
     })
   }
@@ -67,12 +68,13 @@ const Checkout = () => {
   }
 
   return (
-    <div>
+    <div className="check-out">
       {
         idOrder ? (
-          <div>
-            <h2>¡Orden generada con éxito! 😁</h2>
-            <p>El código de su orden es: {idOrder}</p>
+          <div className="d-flex flex-column justify-content-center align-items-center">
+            <h2 className="pb-3">¡Orden generada con éxito! 😁</h2>
+            <p>El código de su orden es:</p>
+            <p>{idOrder}</p>
           </div>
         ) : (
           <Form formData={formData} handleChangeInput={handleChangeInput} handleSubmitForm={handleSubmitForm}/>

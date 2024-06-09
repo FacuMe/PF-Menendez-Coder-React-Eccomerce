@@ -1,0 +1,46 @@
+.check-out{
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.form-checkout{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.box-input{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.box-input input{
+    margin-top: 5px;
+    width: 350px;
+    font-size: 18px;
+    padding: 5px;
+}
+
+.button-submit{
+    color: white;
+    background-color: #ab2143;
+    border: 1px solid #790f29;
+    height: 30px;
+    border-radius: 5px;
+    padding: 20px 25px;
+    text-decoration: none;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-submit:hover {
+    background-color: #790f29;
+    border: 1px solid #790f29;
+}

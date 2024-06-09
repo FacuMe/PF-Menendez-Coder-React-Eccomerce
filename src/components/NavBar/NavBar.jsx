@@ -5,8 +5,8 @@ const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary sticky-top">
       <div className="container-fluid">
-        <Link to="/" className="navbar-brand ps-5 mt-2">
-          <img src="src/assets/logo-img-3-edit-3.png" alt="Logo" width="60" height="44" className="d-inline-block align-text-center" />
+        <Link to="/" className="navbar-brand ms-5 mt-2">
+          <img src="/logo-img-3-edit-3.png" alt="Logo" width="60" height="44" className="d-inline-block align-text-center" />
           Booklify
         </Link>
         <div className="collapse navbar-collapse ps-5" id="navbarText">

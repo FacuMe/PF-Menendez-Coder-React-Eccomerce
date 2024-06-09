@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
+import "./cart.css";
 
 const Cart = () => {
 
@@ -8,15 +9,17 @@ const Cart = () => {
 
   if(carrito.length === 0){
     return(
-      <div>
+      <div className="cart-empty">
         <h2>El carrito esta vacío 😿</h2>
-        <Link to="/">Ver productos</Link>
+        <Link to="/">
+          <button className="btn btn-dark btn-cart">Ver productos</button>
+        </Link>
       </div>
     )
   }
 
   return (
-    <div className="d-flex flex-column">
+    <div className="d-flex flex-column cart">
       <h4 className="align-self-center pt-4 pb-4">Carrito de compras</h4>
       {
         carrito.map( (cartProduct) => (
@@ -26,14 +29,18 @@ const Cart = () => {
             <p className="col-1">x{cartProduct.quantity}</p>
             <p className="col-1">Precio: ${cartProduct.price}</p>
             <p className="col-2">Subtotal: ${cartProduct.price * cartProduct.quantity}</p>
-            <button onClick={() => deleteProductById(cartProduct.id)}>Borrar</button>
+            <button onClick={() => deleteProductById(cartProduct.id)} className="btn btn-dark btn-cart delete-from-cart-btn">Eliminar</button>
           </div>
         ))
       }
-      <div className="offset-2 ps-4 pt-5 pb-5 mb-3">
-        <h2>Total: ${totalCartValue()}</h2>
-        <Link to="/checkout">Finalizar compra</Link>
-        <button onClick={clearCart}>Vaciar carrito</button>
+      <div className="offset-2 col-8 ps-4 pt-4 pb-5 mb-3 pe-1">
+        <h2 className="mb-4">Total: ${totalCartValue()}</h2>
+        <div className="d-flex justify-content-between">
+          <Link to="/checkout">
+            <button className="btn btn-dark btn-cart">Finalizar compra</button>
+          </Link>
+          <button onClick={clearCart} className="btn btn-light ms-3">Vaciar carrito</button>
+        </div>
       </div>
     </div>
   )

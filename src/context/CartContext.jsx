@@ -47,8 +47,6 @@ const CartProvider = ({ children }) => {
         setCarrito(filteredProducts);
     }
 
-    console.log(carrito)
-
     return(
         <CartContext.Provider value={{carrito, addToCart, totalQuantity, clearCart, deleteProductById, totalCartValue}}>
             { children }

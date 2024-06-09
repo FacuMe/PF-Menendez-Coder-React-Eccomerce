@@ -16,24 +16,30 @@ const ItemDetail = ({product}) => {
   }
 
   return (
-    <div className="d-flex justify-content-center align-items-center m-5 detail-container gap-5">
-      <div>
-        <img src={product.image} className="img-detail" alt="..."/>
+    <div className="row justify-content-center pt-5 pb-5">
+      <div className="col-10 col-sm-4 order-sm-1 d-flex justify-content-center align-items-center">
+          <div className="col-10 product-img-wrapper product-img-wrapper--yellow-bg">
+              <img src={product.image} className="img-fluid product-img" alt="..."/>
+          </div>
       </div>
-      <div>
-        <p>{product.name}</p>
-        <p>Autor: {product.author}</p>
-        <p>Sinopsis: {product.description}</p>
-        <p>Categoría: {product.category}</p>
-        <p>Stock: {product.stock}</p>
-        <p>${product.price}</p>
+      <div className="col-10 col-sm-4 order-sm-2 d-flex flex-column product-data">
+        <h3 className="product-title">{product.name}</h3>
+        <div className="mt-3 product-description"> 
+          <h5 className="pb-5">{product.author}</h5>
+          <h6 className="pb-3">Sinopsis: {product.description}</h6>
+          <h6 className="pb-2">Categoría: {product.category}</h6>
+          <h6 className="pb-4">Stock: {product.stock}</h6>
+        </div>
+        <h5 className="product-price pb-2">${product.price}</h5>
         {hideCount ? (
-          <Link to="/cart">Ir al carrito</Link>
+          <Link to="/cart">
+            <button className="btn btn-dark btn-go-to-cart">Ir al carrito</button>
+          </Link>
         ) : (
           <ItemCount stock={product.stock} addProduct={addProduct}/>
         )}
       </div>
-    </div>
+    </div>    
   );
 };
 

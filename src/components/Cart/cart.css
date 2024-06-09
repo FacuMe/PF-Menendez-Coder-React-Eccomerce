@@ -1,0 +1,36 @@
+.cart-empty{
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    gap: 20px;
+}
+
+.cart {
+    color: white;
+}
+
+.btn-cart {
+    background-color: #ab2143;
+    border: 1px solid #790f29;
+}
+
+.btn-cart:hover {
+    background-color: #790f29;
+    border: 1px solid #790f29;
+}
+
+.btn-light {
+    border: 1px solid #790f29;
+}
+
+.btn-light:hover {
+    border: 1px solid #790f29;
+}
+
+.delete-from-cart-btn {
+    font-size: 14px;
+}

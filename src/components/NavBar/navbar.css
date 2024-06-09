@@ -1,3 +1,8 @@
+.navbar-brand {
+    font-family: "Dancing Script", cursive;
+    letter-spacing: 3px;
+}
+
 .cart-counter {
     font-size: "17px"; 
     text-decoration: none;
@@ -9,4 +14,8 @@
 
 .cart-grey {
     color: grey;
+}
+
+.total-count {
+    font-weight: 600;
 }

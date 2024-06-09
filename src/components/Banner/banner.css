@@ -1,10 +1,37 @@
 .banner{
     width: 100%;
     height: 150px;
+    position: relative;
+    background-color: #eec051;
+    overflow: hidden;
 }
 .img-banner{
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border-radius: 0 0 10px 10px;
+    background-image: url(/banner2.webp);
+    background-position: center 14%;
+    background-attachment: fixed;
+    color: white;
+}
+
+.banner-overlay {
+    background-color: #eec051;
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.title {
+    position: absolute;
+    z-index:1;
+    color: white;
+    text-shadow: 2px 2px 4px black, -2px -2px 4px gray;
+    font-weight: bold; 
+    padding: 10px 20px; 
+    border-radius: 5px;
+    letter-spacing: 5px;
+    font-family: "Dancing Script", cursive;
 }

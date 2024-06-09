@@ -41,7 +41,7 @@ const ItemDetailContainer = () => {
   return (
     <div>
       {
-        loading ? <div>Cargando...</div> : error ? <div className="error-message">{error}</div> : <ItemDetail product={product}/>
+        loading ? <div className="loading">Cargando...</div> : error ? <div className="error-message">{error}</div> : <ItemDetail product={product}/>
       }
     </div>
   )

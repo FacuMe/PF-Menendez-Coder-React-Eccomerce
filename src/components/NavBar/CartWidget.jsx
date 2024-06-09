@@ -11,9 +11,10 @@ const CartWidget = () => {
   let quantity = totalQuantity();
 
   return (
-    <Link to="/cart" className={ quantity >= 1 ? "d-flex mt-3 gap-2 pe-5 cart-counter cart-yellow" : "d-flex mt-3 gap-2 pe-5 cart-counter cart-grey"}>
+    <Link to="/cart" className={ quantity >= 1 ? "d-flex justify-content-between align-items-center mt-3 mb-2 me-5 cart-counter cart-yellow" : 
+    "d-flex justify-content-between align-items-center mt-3 mb-2 me-5 gap-2 cart-counter cart-grey"}>
       <FaCartShopping size="25"/>
-      <p> { quantity >= 1 && quantity } </p>
+      <p className="ms-1 total-count"> { quantity >= 1 && quantity } </p>
     </Link>
   )
 }

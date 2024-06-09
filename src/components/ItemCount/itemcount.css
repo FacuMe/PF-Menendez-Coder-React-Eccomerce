@@ -1,0 +1,22 @@
+.btn-add-to-cart {
+    background-color: #ab2143;
+    border: 1px solid #790f29;
+}
+
+.btn-add-to-cart:hover {
+    background-color: #790f29;
+    border: 1px solid #790f29;
+}
+
+.count-btn {
+    font-size: 22px;
+}
+
+.count-btn:hover {
+    cursor: pointer;
+    color: #790f29;
+}
+
+.count {
+    font-size: 22px;
+}

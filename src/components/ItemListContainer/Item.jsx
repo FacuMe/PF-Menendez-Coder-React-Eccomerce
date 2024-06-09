@@ -13,7 +13,7 @@ const Item = ({product}) => {
               <p className="products__block__item__box__price">$ {product.price}</p>
               <div>
                 <Link to={"/detail/" + product.id}>
-                    <button type="button" className="btn btn-dark products__block__item__box__btn">Descripción</button>       
+                    <button type="button" className="btn btn-dark products__block__item__box__btn">Detalle</button>       
                 </Link>  
               </div>           
             </div>
