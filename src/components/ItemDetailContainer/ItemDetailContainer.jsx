@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import {doc, getDoc} from "firebase/firestore";
 import db from "../../db/db.js";
 import { toast } from 'react-toastify';
+import { HashLoader} from 'react-spinners';
 
 const ItemDetailContainer = () => {
 
@@ -41,7 +42,12 @@ const ItemDetailContainer = () => {
   return (
     <div>
       {
-        loading ? <div className="loading">Cargando...</div> : error ? <div className="error-message">{error}</div> : <ItemDetail product={product}/>
+        loading ? 
+          <div className="loading gap-4">
+            <HashLoader color="#f6cd6f" />
+            <p className='ps-3'>Cargando...</p>
+          </div> : 
+        error ? <div className="error-message">{error}</div> : <ItemDetail product={product}/>
       }
     </div>
   )

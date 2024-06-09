@@ -5,7 +5,7 @@
 
 ##### `Dev - FacuMe`
 
-Booklify es un proyecto desarrollado como parte de la carrera de Desarrollo Web de Coderhouse, específicamente para el curso de React Js. Se trata de un e-commerce de una tienda de libros que ofrece funcionalidades como navegación por la página, listado y filtrado de productos, agregación al carrito de compras y ejecución de la orden. Todo ello se logra gracias al uso de tecnologías como React, Yup para validación, Bootstrap para estilos, Firebase para alojamiento y almacenamiento de datos, y otras librerías como React-Toastify y React Icons.
+Booklify es un proyecto desarrollado como parte de la carrera de Desarrollo Web de Coderhouse, específicamente para el curso de React Js. Se trata de un e-commerce de una tienda de libros que ofrece funcionalidades como navegación por la página, listado y filtrado de productos, agregación al carrito de compras y ejecución de la orden. Todo ello se logra gracias al uso de tecnologías como React, Yup para validación, Bootstrap para estilos, Firebase para alojamiento y almacenamiento de datos, y otras librerías como React-Toastify, React Spinners y React Icons.
 
 ## Funcionalidades principales
 
@@ -23,6 +23,7 @@ Booklify es un proyecto desarrollado como parte de la carrera de Desarrollo Web 
 ![Firebase](https://img.shields.io/badge/-Firebase-FFCA28?logo=firebase&logoColor=white)
 ![React Icons](https://img.shields.io/badge/-React%20Icons-61DAFB?logo=react&logoColor=white)
 ![React Router](https://img.shields.io/badge/-React%20Router%20DOM-CA4245?logo=react-router&logoColor=white)
+![React Spinners](https://img.shields.io/badge/-React%20Spinners-61DAFB?logo=react&logoColor=white)
 
 ## Contacto
 

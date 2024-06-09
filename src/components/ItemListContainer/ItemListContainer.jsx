@@ -6,6 +6,7 @@ import db from "../../db/db";
 import { toast } from 'react-toastify';
 import Banner from "../Banner/Banner.jsx";
 import './itemlistcontainer.css';
+import { HashLoader} from 'react-spinners';
 
 
 const ItemListContainer = () => {
@@ -128,7 +129,12 @@ const ItemListContainer = () => {
       <Banner />
       <h2 className="d-flex justify-content-center align-items-center pt-4 pb-4 encabezado">{getHeaderMessage()}</h2>
       {
-        loading ? <div className="loading">Cargando...</div> : error ? <div className="error-message">{error}</div> : <ItemList products={products}/>
+        loading ? 
+          <div className="loading gap-4">
+            <HashLoader color="#f6cd6f" />
+            <p className='ps-3'>Cargando...</p>
+          </div> : 
+        error ? <div className="error-message">{error}</div> : <ItemList products={products}/>
       }
     </div>
   )
